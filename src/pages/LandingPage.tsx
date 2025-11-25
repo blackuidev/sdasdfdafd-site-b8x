@@ -1,52 +1,81 @@
+"use client";
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 const LandingPage = () => {
   return (
-    <div className="bg-gradient-to-br from-gray-900 to-black text-white min-h-screen flex flex-col">
-      {/* Hero Section */}
-      <section className="p-8 md:p-16 flex flex-col items-center justify-center text-center gap-6 flex-grow">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">Empowering Your Digital World</h1>
-        <p className="text-lg md:text-xl text-muted-foreground">
-          Unlock the potential of seamless digital experiences with our innovative solutions.
-        </p>
-        <div className="flex items-center gap-4">
-          <Button className="bg-primary hover:bg-primary/90 transition-all duration-300">
-            Get Started <ArrowRight className="ml-2" />
-          </Button>
-          <Button variant="outline">Learn More</Button>
+    <div className="bg-gradient-to-br from-gray-900 to-black min-h-screen text-white py-20">
+      <div className="container mx-auto px-4">
+        <header className="text-center mb-16">
+          <img
+            src="https://via.placeholder.com/150x50?text=Shoe+Co+Logo"
+            alt="Shoe Company Logo"
+            className="mx-auto mb-4"
+          />
+          <h1 className="text-4xl font-bold mb-4">Welcome to Shoe Store</h1>
+          <p className="text-lg text-gray-300">Find your perfect pair of shoes.</p>
+        </header>
+
+        <section className="mb-16">
+          <h2 className="text-3xl font-semibold mb-8 text-center">Featured Shoes</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Example shoe cards - replace with actual data */}
+            <Card className="bg-white/5 backdrop-blur-md border-white/10">
+              <CardHeader>
+                <CardTitle>Running Shoe</CardTitle>
+                <CardDescription>High-performance running shoe.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <img
+                  src="https://images.unsplash.com/photo-1549298713-244e32c686a3?auto=format&fit=crop&w=300&q=80"
+                  alt="Running Shoe"
+                  className="w-full h-48 object-cover mb-4 rounded-md"
+                />
+                <p className="text-sm text-gray-300">Comfort and speed for your daily runs.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/5 backdrop-blur-md border-white/10">
+              <CardHeader>
+                <CardTitle>Casual Sneaker</CardTitle>
+                <CardDescription>Stylish and comfortable for everyday wear.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <img
+                  src="https://images.unsplash.com/photo-1525525909400-479418c8ba9d?auto=format&fit=crop&w=300&q=80"
+                  alt="Casual Sneaker"
+                  className="w-full h-48 object-cover mb-4 rounded-md"
+                />
+                <p className="text-sm text-gray-300">Perfect for any casual occasion.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/5 backdrop-blur-md border-white/10">
+              <CardHeader>
+                <CardTitle>Formal Shoe</CardTitle>
+                <CardDescription>Elegant and sophisticated for special events.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <img
+                  src="https://images.unsplash.com/photo-1606107557195-0a29a5b4b4aa?auto=format&fit=crop&w=300&q=80"
+                  alt="Formal Shoe"
+                  className="w-full h-48 object-cover mb-4 rounded-md"
+                />
+                <p className="text-sm text-gray-300">Make a statement with these classic shoes.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        <div className="text-center">
+          <Link to="/products">
+            <Button className="bg-primary hover:bg-primary/80 text-white font-semibold px-6 py-3 rounded-md transition-colors duration-300">Shop All Shoes</Button>
+          </Link>
         </div>
-      </section>
-
-      {/* About Section */}
-      <section className="bg-white/5 backdrop-blur-md p-8 md:p-16 rounded-xl border border-white/10 shadow-lg">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-semibold mb-6 text-white">About Us</h2>
-          <p className="text-lg text-muted-foreground">
-            We are a team of passionate innovators dedicated to crafting exceptional digital products. Our mission is to empower individuals and businesses with cutting-edge technology and intuitive design.
-          </p>
-          <p className="text-lg text-muted-foreground mt-4">
-            From web applications to mobile solutions, we strive to deliver excellence in every project.
-          </p>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="p-8 md:p-16 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Ready to Transform Your Digital Presence?</h2>
-        <p className="text-lg text-muted-foreground mb-8">
-          Contact us today to discuss your project and discover how we can help you achieve your goals.
-        </p>
-        <Button className="bg-green-500 hover:bg-green-600 transition-all duration-300">
-          Contact Us
-        </Button>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 p-4 text-center text-gray-400">
-        &copy; {new Date().getFullYear()} Your Company. All rights reserved.
-      </footer>
+      </div>
     </div>
   );
 };
